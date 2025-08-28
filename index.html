@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="./images/QUIZMania.png" alt="Quiz App Logo" width="144" height="23">
+    </header>
+
+
+    <div class="quiz-container">
+        <!-- welcome screen -->
+        <main class="welcome" id="welcome">
+            <h1 class="text-center">Welcome to <span class="brand">QUIZ<span class="highlight">Mania</span></span></h1>
+
+            <div class="rules-box">
+                <p>Please read all the rules about this quiz before you start.</p>
+                <a href="#" class="rules-link">Quiz rules</a>
+            </div>
+
+            <form class="quiz-form">
+                <label for="fullname" class="form-label">Full name</label>
+                <input required type="text" id="fullname" name="fullname" placeholder="Full name" class="form-input">
+
+                <p class="form-label">Please select topic to continue</p>
+                <div class="topics">
+                    <label class="topic">
+                        <input type="radio" name="topic" value="js">
+                        <span>Javascript Basic</span>
+                    </label>
+                    <label class="topic">
+                        <input type="radio" name="topic" value="angular">
+                        <span>Angular Basic</span>
+                    </label>
+                    <label class="topic">
+                        <input type="radio" name="topic" value="react">
+                        <span>React.js Advance</span>
+                    </label>
+                    <label class="topic">
+                        <input type="radio" name="topic" value="flutter">
+                        <span>Flutter</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn">Start Quiz</button>
+            </form>
+        </main>
+
+        <!-- quiz screen -->
+        <section id="quiz" class="hidden">
+            <div class="timer-wrap">
+                <div class="flex-between">
+                    <div id="question-count"></div>
+                    <div id="time-label">00:10</div>
+                </div>
+                <div class="timebar">
+                    <div id="timebar-fill"></div>
+                </div>
+            </div>
+            <div>
+                <div id="question-text"></div>
+                <ul id="options-list"></ul>
+                <button id="next-btn" class="btn">Next</button>
+            </div>
+
+        </section>
+
+        <!-- complete score screen -->
+        <section id="complete" class="hidden">
+            <div class="complete-card">
+                <h2>Quiz complete</h2>
+                <p>Your score: <span id="score-text">0%</span></p>
+                <p id="score-message"></p>
+                <button id="retake-btn" class="btn">Retake Quiz</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- rules modal -->
+    <div id="rules-modal" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="rules-title">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-card" role="document">
+            <button class="modal-close" aria-label="Close" data-close="true">×</button>
+
+            <h2 id="rules-title" class="modal-title">Quiz rules</h2>
+
+            <div class="rule-group">
+                <div class="rule-heading">10–Second Timer</div>
+                <ul class="rule-list">
+                    <li>Each question comes with a 10‑second timer.</li>
+                    <li>If time runs out, the app automatically moves to the next question.</li>
+                </ul>
+            </div>
+
+            <div class="rule-group">
+                <div class="rule-heading">Manual Navigation</div>
+                <ul class="rule-list">
+                    <li>Navigate to the next question manually before the timer expires.</li>
+                    <li>Use the “Next” button to move ahead if ready.</li>
+                </ul>
+            </div>
+
+            <div class="rule-group">
+                <div class="rule-heading">Final Score and Message</div>
+                <ul class="rule-list">
+                    <li>After all questions, the final score will be displayed.</li>
+                    <li>Performance message:
+                        <ul>
+                            <li>Great job! Score <b>above 80%.</b></li>
+                            <li>Well done! Score <b>between 60% and 80%.</b></li>
+                            <li>Keep practicing! Score <b>below 60%.</b></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

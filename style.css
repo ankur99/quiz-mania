@@ -1,0 +1,290 @@
+body {
+    background-color: rgba(243, 243, 233, 1);
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+header {
+    border-bottom: 1px solid rgba(217, 217, 217, 1);
+    padding: 29px 108px;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+    }
+}
+
+/* Center content */
+.quiz-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.brand .highlight {
+    color: #c84b73;
+    /* pinkish accent */
+    font-weight: bold;
+}
+
+/* Rules Box */
+.rules-box {
+    background: #f4f4f4;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.rules-link {
+    display: block;
+    margin-top: 4px;
+    color: #c84b73;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Form */
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.form-input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.topics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.topic {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.topic input[type="radio"] {
+    accent-color: #c84b73;
+    /* modern browsers */
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #c84b73;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #a63a5e;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    main.welcome {
+        margin: 30px auto;
+    }
+
+    .topics {
+        grid-template-columns: 1fr;
+    }
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.option {
+    transition: background-color .2s, color .2s;
+    margin-bottom: 10px;
+}
+
+.option.correct {
+    background: #e7f6e7;
+    color: #137333;
+}
+
+.option.incorrect {
+    background: #fde8e8;
+    color: #a50e0e;
+}
+
+.options-locked .option {
+    pointer-events: none;
+    opacity: .95;
+}
+
+.complete-card {
+    text-align: center;
+}
+
+.timer-wrap {
+    margin-bottom: 12px;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+#time-label {
+    font-family: inherit;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+.timebar {
+    width: 100%;
+    height: 8px;
+    background: #eee;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+#timebar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #c84b73, #c27a91);
+    border-radius: 999px;
+    transition: width 0.2s linear;
+}
+
+/* Modal base */
+.modal.hidden {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.modal-card {
+    position: relative;
+    width: min(720px, 92vw);
+    margin: 6vh auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px 28px 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    max-height: 88vh;
+    overflow: auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: #f0f0f0;
+    color: #333;
+    font-size: 22px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: #e6e6e6;
+}
+
+.modal-title {
+    font-family: inherit;
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 18px;
+}
+
+.rule-group {
+    margin-bottom: 20px;
+}
+
+.rule-heading {
+    font-weight: 700;
+    background: #f5f3ea;
+    /* soft band like screenshot */
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.rule-list {
+    margin: 0 0 0 18px;
+    padding: 0;
+}
+
+.rule-list>li {
+    margin: 8px 0;
+}
+
+/* Nested list styling inside the performance section */
+.rule-list ul {
+    margin: 8px 0 0 18px;
+    padding: 0;
+}
+
+/* Reduce modal padding on small screens */
+@media (max-width: 600px) {
+    .modal-card {
+        padding: 20px;
+        margin: 4vh auto;
+    }
+
+    .modal-title {
+        font-size: 24px;
+    }
+}
